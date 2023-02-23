@@ -1,7 +1,4 @@
 const fibonacciEquation = (length, current = 1, prev = 0, arr = []) => {
-  // If length is less than required to show a fibonacci sequence,
-  // return -1
-
   // If recursive iterations have reached the length desired by user, return the
   // current value
   if (length === 0) return current
