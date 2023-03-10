@@ -20,3 +20,27 @@ const restructureArray = (arr) => {
 
 console.log(restructureArray(array))
 
+// Extra challenge
+
+const sortedRestructureArray = (arr) => {
+    const [numArr, letterArr, nonWordArr] = [[], [], []]
+    
+    arr.forEach((character) => {
+        if (typeof character === "string" && character.match(/[a-z]/i)) 
+          letterArr[letterArr.length] = character
+        else if (typeof character === "number") 
+          numArr[numArr.length] = character
+        else 
+          nonWordArr[nonWordArr.length] = character
+    })
+
+    return [
+        ...numArr.sort((numA, numB) => numA - numB),
+        ...letterArr.sort((letterA, letterB) => 
+          letterA.toLowerCase() >= letterB.toLowerCase() ? 1 : -1),
+        ...nonWordArr
+    ]
+} 
+
+console.log(sortedRestructureArray(testArray))
+
