@@ -35,7 +35,7 @@ const sortedRestructureArray = (arr) => {
     })
 
     return [
-        ...numArr.sort((numA, numB) => numA - numB),
+        ...numArr.sort((numA, numB) => parseInt(numA, 10) - parseInt(numB, 10)),
         ...letterArr.sort((letterA, letterB) => 
           letterA.toLowerCase() >= letterB.toLowerCase() ? 1 : -1),
         ...nonWordArr
