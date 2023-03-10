@@ -8,7 +8,7 @@ const restructureArray = (arr) => {
     arr.forEach((character) => {
         if (typeof character === "string" && character.match(/[a-z]/i)) 
           letterArr[letterArr.length] = character
-        else if (typeof character === "number") 
+        else if (typeof character === "number" || typeof character === "string" && character.match(/[0-9]/)) 
           numArr[numArr.length] = character
         else 
           nonWordArr[nonWordArr.length] = character
@@ -28,7 +28,7 @@ const sortedRestructureArray = (arr) => {
     arr.forEach((character) => {
         if (typeof character === "string" && character.match(/[a-z]/i)) 
           letterArr[letterArr.length] = character
-        else if (typeof character === "number") 
+        else if (typeof character === "number" || typeof character === "string" && character.match(/[0-9]/)) 
           numArr[numArr.length] = character
         else 
           nonWordArr[nonWordArr.length] = character
