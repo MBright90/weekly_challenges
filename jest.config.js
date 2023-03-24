@@ -1,3 +1,7 @@
 module.exports = {
-  clearMocks: true,
-};
+  preset: '',
+  testEnvironment: 'node',
+  testPathIgnorePatterns: [
+    '/node_modules/',
+  ],
+}
