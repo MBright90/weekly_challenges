@@ -1,14 +1,14 @@
+/* eslint-disable no-param-reassign */
 const fibonacciEquation = (length, current = 1, prev = 0, arr = []) => {
   // If recursive iterations have reached the length desired by user, return the
   // current value
   if (length === 0) return current
-  
+
   if (current > Number.MAX_SAFE_INTEGER) [current, prev] = [BigInt(current), BigInt(prev)]
-  
-  // Recursive case  
+
+  // Recursive case
   fibonacciEquation(length - 1, current + prev, current, arr)
   arr.unshift(current.toString())
-  
   return arr
 }
 
@@ -17,8 +17,14 @@ const fibonacciEquation = (length, current = 1, prev = 0, arr = []) => {
 const fibonacci = (length) => {
   if (length <= 1) return -1
   const fibResult = fibonacciEquation(length)
-  fibResult.unshift("0")
+  fibResult.unshift(0)
   return fibResult
 }
 
-console.log(fibonacci(100).join(', '))
+const printFibonacci = (length) => {
+  const arr = fibonacci(length)
+  console.log(typeof arr)
+  return arr.join(', ')
+}
+
+export { fibonacci, printFibonacci }
