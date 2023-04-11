@@ -24,13 +24,13 @@ describe('morseCodeTranslator', () => {
 })
 
 describe('morseCodeDecoder', () => {
-  it('should return the Morse code equivalent of a single letter', () => {
+  it('should return the letter equivalent of a Morse code character', () => {
     expect(morseCodeDecoder('.-')).toBe('a')
     expect(morseCodeDecoder('-...')).toBe('b')
     expect(morseCodeDecoder('-.-.')).toBe('c')
   })
 
-  it('should return the Morse code equivalent of a word', () => {
+  it('should return the word equivalent of Morse code ', () => {
     expect(morseCodeDecoder('.... . .-.. .-.. ---')).toBe('hello')
     expect(morseCodeDecoder('.-- --- .-. .-.. -..')).toBe('world')
   })
