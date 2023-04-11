@@ -38,6 +38,16 @@ const morseDict = {
   ' ': '/',
 }
 
-export default function morseCodeTranslator(string) {
+export function morseCodeTranslator(string) {
   return string.split('').map((character) => morseDict[character]).join(' ')
+}
+
+export function morseCodeDecoder(string) {
+  const splitString = string.toLowerCase().split(' ')
+
+  return splitString.map((char) => (
+    Object.values(morseDict).includes(char)
+      ? Object.keys(morseDict)[Object.values(morseDict).indexOf(char)]
+      : char
+  )).join('')
 }
