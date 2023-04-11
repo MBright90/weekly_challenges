@@ -45,9 +45,12 @@ export function morseCodeTranslator(string) {
 export function morseCodeDecoder(string) {
   const splitString = string.toLowerCase().split(' ')
 
+  const morseValues = Object.values(morseDict)
+  const morseKeys = Object.keys(morseDict)
+
   return splitString.map((char) => (
-    Object.values(morseDict).includes(char)
-      ? Object.keys(morseDict)[Object.values(morseDict).indexOf(char)]
+    morseValues.includes(char)
+      ? morseKeys[morseValues.indexOf(char)]
       : char
   )).join('')
 }
