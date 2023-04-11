@@ -25,23 +25,23 @@ describe('morseCodeTranslator', () => {
 
 describe('morseCodeDecoder', () => {
   it('should return the Morse code equivalent of a single letter', () => {
-    expect(morseCodeTranslator('.-')).toBe('a')
-    expect(morseCodeTranslator('-...')).toBe('b')
-    expect(morseCodeTranslator('-.-.')).toBe('c')
+    expect(morseCodeDecoder('.-')).toBe('a')
+    expect(morseCodeDecoder('-...')).toBe('b')
+    expect(morseCodeDecoder('-.-.')).toBe('c')
   })
 
   it('should return the Morse code equivalent of a word', () => {
-    expect(morseCodeTranslator('.... . .-.. .-.. ---')).toBe('hello')
-    expect(morseCodeTranslator('.-- --- .-. .-.. -..')).toBe('world')
+    expect(morseCodeDecoder('.... . .-.. .-.. ---')).toBe('hello')
+    expect(morseCodeDecoder('.-- --- .-. .-.. -..')).toBe('world')
   })
 
   it('should remove the space character between each letter', () => {
-    expect(morseCodeTranslator('... --- ...')).toBe('sos')
-    expect(morseCodeTranslator('.... . .-.. .--.')).toBe('help')
+    expect(morseCodeDecoder('... --- ...')).toBe('sos')
+    expect(morseCodeDecoder('.... . .-.. .--.')).toBe('help')
   })
 
   it('should include a space character for between each word', () => {
-    expect(morseCodeTranslator('... --- ... / .--. .-.. . .- ... .')).toBe('sos please')
-    expect(morseCodeTranslator('-- .- -.-- -.. .- -.-- / -- .- -.-- -.. .- -.--')).toBe('mayday mayday')
+    expect(morseCodeDecoder('... --- ... / .--. .-.. . .- ... .')).toBe('sos please')
+    expect(morseCodeDecoder('-- .- -.-- -.. .- -.-- / -- .- -.-- -.. .- -.--')).toBe('mayday mayday')
   })
 })
